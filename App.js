@@ -2,6 +2,7 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Icon } from 'react-native-elements'
+import { Toast } from 'react-native-toast-message'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import HomeScreen from './src/screens/HomeScreen'
@@ -41,6 +42,7 @@ export default function App() {
           component={NewScreen}
         />
       </Stack.Navigator>
+
     </NavigationContainer>
   )
 }
