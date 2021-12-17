@@ -23,13 +23,14 @@ export default function NewScreen () {
   getItem() // get todo array from storage
     .then((todoJSON) => {
       let todo = todoJSON ? JSON.parse(todoJSON) : []
+      // add a new item to the task list
       todo.push({
-        id: uuid.v4(),
-        title: values.title
+        id: uuid.v4(), // generates a random id for the new task
+        title: values.title // required title
       })
     })
   
-  
+  setItem(JSON.stringify(todo))
   
   return (
     <Formik
