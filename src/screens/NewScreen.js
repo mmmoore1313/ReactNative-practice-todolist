@@ -10,9 +10,15 @@ export default function NewScreen () {
   const { getItem, setItem } = useAsyncStorage('todo')
   
   function newTask (values) {
-    //TODO save new task
+    if (!values.title) {
+      Toast.show({
+        type: 'error',
+        text1: 'Title is required',
+        position: 'top'
+      })
+      return
+    }
   }
-  
   
   return (
     <Formik
