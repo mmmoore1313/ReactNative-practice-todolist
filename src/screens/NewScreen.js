@@ -20,6 +20,17 @@ export default function NewScreen () {
     }
   }
   
+  getItem() // get todo array from storage
+    .then((todoJSON) => {
+      let todo = todoJSON ? JSON.parse(todoJSON) : []
+      todo.push({
+        id: uuid.v4(),
+        title: values.title
+      })
+    })
+  
+  
+  
   return (
     <Formik
       initialValues={{title: ''}}
